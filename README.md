@@ -57,6 +57,10 @@ npm run preview
 | ![Stateless](./docs/screenshots/stateless.png) | just render a static content wihout any changes                                                |
 | ![Stateful](./docs/screenshots/statefull.png)  | the badge at the top right title can be changes depends on how many message that has been sent |
 
+## Testing
+
+![Testing](./docs/screenshots/test.png)
+
 ## Live Demo
 
 not available yet
