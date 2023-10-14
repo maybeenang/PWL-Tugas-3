@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="flex justify-between w-full">
         <div className="flex flex-col gap-2">
           <a
-            href="https://www.instagram.com/elangpermadani/"
+            href="https://www.instagram.com/maybeenang/"
             target="_blank"
             className="text-blue-500 hover:text-blue-600 flex gap-2 items-center text-xs"
           >
@@ -19,7 +19,7 @@ const Footer = () => {
             maybeenang
           </a>
           <a
-            href="https://www.instagram.com/elangpermadani/"
+            href="mailto:melangpermadani@.gmail.com"
             target="_blank"
             className="text-blue-500 hover:text-blue-600 flex gap-2 items-center text-xs"
           >
@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-2">
           <a
-            href="https://www.instagram.com/elangpermadani/"
+            href="https://www.github.com/maybeenang"
             target="_blank"
             className="text-blue-500 hover:text-blue-600 flex gap-2 items-center text-xs"
           >
@@ -37,7 +37,7 @@ const Footer = () => {
             maybeenang
           </a>
           <a
-            href="https://www.instagram.com/elangpermadani/"
+            href="https://id.linkedin.com/in/maybeenang"
             target="_blank"
             className="text-blue-500 hover:text-blue-600 flex gap-2 items-center text-xs"
           >
