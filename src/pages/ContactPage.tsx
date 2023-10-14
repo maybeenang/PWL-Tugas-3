@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 interface IContactForm {
@@ -21,14 +21,6 @@ const ContactPage = () => {
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (isAnonymous) {
-      setInputData({
-        name: "Anonymous",
-        email: "-",
-        message: inputData.message,
-      });
-    }
 
     setLoading(true);
     toast
@@ -64,6 +56,16 @@ const ContactPage = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+  useEffect(() => {
+    if (isAnonymous) {
+      setInputData((prev) => ({
+        ...prev,
+        name: "Anonymous",
+        email: "-",
+      }));
+    }
+  }, [isAnonymous]);
 
   return (
     <div className=" md:w-screen max-w-lg ">
