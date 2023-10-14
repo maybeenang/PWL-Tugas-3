@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import useCountMessage from "../hooks/useCountMessage";
+import { mutate } from "swr";
 
 interface IContactForm {
   name: string;
@@ -18,6 +20,8 @@ const ContactPage = () => {
   const [loading, setLoading] = useState(false);
 
   const [isAnonymous, setIsAnonymous] = useState(false);
+
+  const { data, isLoading, error } = useCountMessage();
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -43,6 +47,7 @@ const ContactPage = () => {
           email: "",
           message: "",
         });
+        mutate("https://sheetdb.io/api/v1/gi981254bw7lm/count");
         setLoading(false);
       })
       .catch(() => {
@@ -71,6 +76,10 @@ const ContactPage = () => {
     <div className=" md:w-screen max-w-lg ">
       <h1 className="text-3xl text-slate-950 pb-5 font-medium">
         Let's get in touch with me
+        <div className="inline-flex items-center justify-center w-6 h-6 text-xs bg-red-500 rounded-full absolute font-sans text-white">
+          {isLoading ? "..." : data?.rows}{" "}
+          {error && <span className="text-red-500">!</span>}
+        </div>
       </h1>
 
       <p className="py-2 text-lg text-slate-600">
